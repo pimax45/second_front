@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./index.css";
+import MainPage from "./Main.page";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import getCookie from "./Cookie/Get_Cookie";
+import setCookie from "./Cookie/Set_Cookie";
+import MainPage_center from "./Main.page_center";
 
-function App() {
+function String_url() {
+  const final_url = "/" + getCookie("adv_id") + "/" + getCookie("id_user");
+  return final_url;
+}
+
+export default function App() {
+  const final_url = "/" + getCookie("adv_id") + "/" + getCookie("id_user");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <section>
+        <Router>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path={final_url} element={<MainPage_center />} />
+          </Routes>
+        </Router>
+      </section>
+      {/* <h1 className="text-1xl font-bold underline">Hello world!</h1>; */}
     </div>
   );
 }
-
-export default App;
