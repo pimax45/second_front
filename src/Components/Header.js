@@ -1,4 +1,5 @@
-import "./index.css";
+import "../index.css";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -7,6 +8,11 @@ export default function Header() {
         VORON
       </button>
       <button class="font-semibold  bg-white hover:bg-white ...">SCRIPT</button>
+      <div>
+        <NavLink to="/">Главная </NavLink>
+        <NavLink to="/dialogs">Диалоги </NavLink>
+        <NavLink to="/my_posts">Посты</NavLink>
+      </div>
     </div>
   );
 }

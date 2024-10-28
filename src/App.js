@@ -1,29 +1,29 @@
 import React from "react";
 import "./index.css";
-import MainPage from "./Main.page";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import getCookie from "./Cookie/Get_Cookie";
-import setCookie from "./Cookie/Set_Cookie";
-import MainPage_center from "./Main.page_center";
-
-function String_url() {
-  const final_url = "/" + getCookie("adv_id") + "/" + getCookie("id_user");
-  return final_url;
-}
+import MainPage from "./Components/Main.page";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  NavLink,
+} from "react-router-dom";
+import My_posts from "./Components/Profile/My_posts";
+import Dialogs from "./Components/Dialogs/Dialogs";
 
 export default function App() {
-  const final_url = "/" + getCookie("adv_id") + "/" + getCookie("id_user");
   return (
     <div>
       <section>
         <Router>
           <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path={final_url} element={<MainPage_center />} />
+            <Route exact path="/" element={<MainPage />} />
+            <Route exact path="/dialogs" element={<Dialogs />} />
+            <Route exact path="/dialogs/:id" element={<Dialogs />} />
+
+            <Route exact path="/my_posts" element={<My_posts />} />
           </Routes>
         </Router>
       </section>
-      {/* <h1 className="text-1xl font-bold underline">Hello world!</h1>; */}
     </div>
   );
 }

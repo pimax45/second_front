@@ -1,8 +1,8 @@
-import "./index.css";
+import "../index.css";
 
 export default function Connect_with_us() {
   return (
-    <div class="p-2 max-w-sm mx-auto bg-white  shadow-lg items-center space-x-4 font-bold flex py-4 first:pt-0 last:pb-0 place-items-center bottom-5 mt-4 ...">
+    <div class="p-2 max-w-sm mx-auto bg-white  shadow-lg items-center space-x-4 font-bold flex py-4 first:pt-0 last:pb-0 bottom-5 mt-4 ...">
       <div>Свяжитесь с нами:</div>
 
       <div>
